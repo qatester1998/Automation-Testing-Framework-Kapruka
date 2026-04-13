@@ -10,7 +10,7 @@ test.describe('Kapruka Login Feature', () => {
     // Step 1: Navigate
     await loginPage.goto();
 
-    // Step 2: Validate page loaded
+    // Step 2: Validate page loadedd
     await loginPage.isLoaded();
 
     // Step 3: Login

@@ -1,0 +1,15 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.515192">
+<testsuite name="e2e/table.spec.ts" timestamp="2026-04-12T08:22:24.680Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.621" errors="0">
+<testcase name="Validate Same Day Delivery Table" classname="e2e/table.spec.ts" time="2.621">
+<system-out>
+<![CDATA[Product: Marble Butter Cake | Price: 3010
+Product: The Man We Love Ribbon Tower Cake | Price: 9500
+Product: Velvet Rose Dreams Bouquet With 12 Red Roses | Price: 6200
+Product: Hidden Heart Shape Rose Ferrero Rocher Gift Box Arrangement | Price: 11500
+Product: Hidden Heart Shape Rose Ferrero Rocher Gift Box Arrangement | Price: 11500
+Product: Red Heart Gift Box Arrangement With Red Roses Ferrero Rocher Chocolates | Price: 9800
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,162 @@
+{
+  "config": {
+    "configFile": "/Users/PlayWright Automation/Kapruka-PlayWright/playwright.config.ts",
+    "rootDir": "/Users/PlayWright Automation/Kapruka-PlayWright/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/PlayWright Automation/Kapruka-PlayWright/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "setup",
+        "name": "setup",
+        "testDir": "/Users/PlayWright Automation/Kapruka-PlayWright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/global\\.setup\\.ts/"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/PlayWright Automation/Kapruka-PlayWright/reports/test-artifacts",
+        "repeatEach": 1,
+        "retries": 1,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/PlayWright Automation/Kapruka-PlayWright/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "reports/html-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/json-report/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "reports/junit/results.xml"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e/table.spec.ts",
+      "file": "e2e/table.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Validate Same Day Delivery Table",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2621,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Product: Marble Butter Cake | Price: 3010\n"
+                    },
+                    {
+                      "text": "Product: The Man We Love Ribbon Tower Cake | Price: 9500\n"
+                    },
+                    {
+                      "text": "Product: Velvet Rose Dreams Bouquet With 12 Red Roses | Price: 6200\n"
+                    },
+                    {
+                      "text": "Product: Hidden Heart Shape Rose Ferrero Rocher Gift Box Arrangement | Price: 11500\n"
+                    },
+                    {
+                      "text": "Product: Hidden Heart Shape Rose Ferrero Rocher Gift Box Arrangement | Price: 11500\n"
+                    },
+                    {
+                      "text": "Product: Red Heart Gift Box Arrangement With Red Roses Ferrero Rocher Chocolates | Price: 9800\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-04-12T08:22:25.041Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f7f1557dc42f75dd1451-43ef360d78838e148d45",
+          "file": "e2e/table.spec.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-04-12T08:22:24.635Z",
+    "duration": 3515.192,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

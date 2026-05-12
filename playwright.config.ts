@@ -6,18 +6,18 @@ import * as path from 'path';
 const env = process.env.TEST_ENV || 'qa';
 dotenv.config({ path: path.resolve(__dirname, `config/.env.${env}`) });
 
-/**
- * Playwright Configuration
- * See: https://playwright.dev/docs/test-configuration
- */
 export default defineConfig({
+
   // ─── Test Directory ──────────────────────────────────────────────────────────
   testDir: './tests',
 
+  // ✅ ONLY THIS (no setup project)
+  // globalSetup: './tests/global.setup.ts',
+
   // ─── Global Timeout ──────────────────────────────────────────────────────────
-  timeout: 60_000,          // 60s per test
+  timeout: 60_000,
   expect: {
-    timeout: 10_000,        // 10s for assertions
+    timeout: 10_000,
   },
 
   // ─── Parallel Execution ──────────────────────────────────────────────────────
@@ -32,61 +32,48 @@ export default defineConfig({
 
   // ─── Reporters ───────────────────────────────────────────────────────────────
   reporter: [
-    ['html', {
-      outputFolder: 'reports/html-report',
-      open: 'never',
-    }],
+    ['html', { outputFolder: 'reports/html-report', open: 'never' }],
     ['json', { outputFile: 'reports/json-report/results.json' }],
     ['junit', { outputFile: 'reports/junit/results.xml' }],
-    ['list'],  // Console output
+    ['list'],
   ],
 
   // ─── Shared Settings ─────────────────────────────────────────────────────────
   use: {
-    // Base URL from environment
     baseURL: process.env.BASE_URL || 'https://www.kapruka.com',
 
-    // Browser context options
     viewport: { width: 1280, height: 720 },
     ignoreHTTPSErrors: true,
 
-    // Artifacts on failure
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     trace: 'retain-on-failure',
 
-    // Extra HTTP headers
     extraHTTPHeaders: {
       'Accept-Language': 'en-US,en;q=0.9',
     },
 
-    // Action timeout
-    actionTimeout: 15_000,
-    navigationTimeout: 30_000,
+    actionTimeout: 60000,
+    navigationTimeout: 60000,
+
+    // ✅ APPLY AUTH HERE GLOBALLY
+    storageState: 'auth.json',
   },
 
   // ─── Output Folder ───────────────────────────────────────────────────────────
   outputDir: 'reports/test-artifacts',
 
-  // ─── Projects (Cross-Browser) ────────────────────────────────────────────────
+  // ─── Projects ────────────────────────────────────────────────────────────────
   projects: [
-    // Setup project for authenticated state
-    {
-      name: 'setup',
-      testMatch: /global\.setup\.ts/,
-    },
-
-    // ── Chromium ────────────────────────────────────────────────────────────────
     {
       name: 'chromium',
       use: {
         ...devices['Desktop Chrome'],
-        //storageState: 'fixtures/auth/user-storage-state.json',
+        storageState: path.resolve(__dirname, 'auth.json'),
       },
-      dependencies: ['setup'],
     },
 
-    // // ── Firefox ─────────────────────────────────────────────────────────────────
+       // // ── Firefox ─────────────────────────────────────────────────────────────────
     // {
     //   name: 'firefox',
     //   use: {

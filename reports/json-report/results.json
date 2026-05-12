@@ -22,22 +22,6 @@
         "metadata": {
           "actualWorkers": 1
         },
-        "id": "setup",
-        "name": "setup",
-        "testDir": "/Users/PlayWright Automation/Kapruka-PlayWright/tests",
-        "testIgnore": [],
-        "testMatch": [
-          "/global\\.setup\\.ts/"
-        ],
-        "timeout": 60000
-      },
-      {
-        "outputDir": "/Users/PlayWright Automation/Kapruka-PlayWright/reports/test-artifacts",
-        "repeatEach": 1,
-        "retries": 1,
-        "metadata": {
-          "actualWorkers": 1
-        },
         "id": "chromium",
         "name": "chromium",
         "testDir": "/Users/PlayWright Automation/Kapruka-PlayWright/tests",
@@ -89,13 +73,13 @@
   },
   "suites": [
     {
-      "title": "e2e/table.spec.ts",
-      "file": "e2e/table.spec.ts",
+      "title": "e2e/tableSorting.spec.ts",
+      "file": "e2e/tableSorting.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
         {
-          "title": "Validate Same Day Delivery Table",
+          "title": "Validate ascending and descending sorting",
           "ok": true,
           "tags": [],
           "tests": [
@@ -110,31 +94,28 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 2621,
+                  "duration": 40330,
                   "errors": [],
                   "stdout": [
                     {
-                      "text": "Product: Marble Butter Cake | Price: 3010\n"
+                      "text": "Original Values: [ \u001b[32m'Smith'\u001b[39m, \u001b[32m'Bach'\u001b[39m, \u001b[32m'Doe'\u001b[39m, \u001b[32m'Conway'\u001b[39m ]\n"
                     },
                     {
-                      "text": "Product: The Man We Love Ribbon Tower Cake | Price: 9500\n"
+                      "text": "Expected Ascending: [ \u001b[32m'Bach'\u001b[39m, \u001b[32m'Conway'\u001b[39m, \u001b[32m'Doe'\u001b[39m, \u001b[32m'Smith'\u001b[39m ]\n"
                     },
                     {
-                      "text": "Product: Velvet Rose Dreams Bouquet With 12 Red Roses | Price: 6200\n"
+                      "text": "Actual Ascending: [ \u001b[32m'Bach'\u001b[39m, \u001b[32m'Conway'\u001b[39m, \u001b[32m'Doe'\u001b[39m, \u001b[32m'Smith'\u001b[39m ]\n"
                     },
                     {
-                      "text": "Product: Hidden Heart Shape Rose Ferrero Rocher Gift Box Arrangement | Price: 11500\n"
+                      "text": "Expected Descending: [ \u001b[32m'Smith'\u001b[39m, \u001b[32m'Doe'\u001b[39m, \u001b[32m'Conway'\u001b[39m, \u001b[32m'Bach'\u001b[39m ]\n"
                     },
                     {
-                      "text": "Product: Hidden Heart Shape Rose Ferrero Rocher Gift Box Arrangement | Price: 11500\n"
-                    },
-                    {
-                      "text": "Product: Red Heart Gift Box Arrangement With Red Roses Ferrero Rocher Chocolates | Price: 9800\n"
+                      "text": "Actual Descending: [ \u001b[32m'Smith'\u001b[39m, \u001b[32m'Doe'\u001b[39m, \u001b[32m'Conway'\u001b[39m, \u001b[32m'Bach'\u001b[39m ]\n"
                     }
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-04-12T08:22:25.041Z",
+                  "startTime": "2026-05-10T12:22:32.000Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -142,8 +123,8 @@
               "status": "expected"
             }
           ],
-          "id": "f7f1557dc42f75dd1451-43ef360d78838e148d45",
-          "file": "e2e/table.spec.ts",
+          "id": "3adc861dc8b9edce38b6-0c9495b1e6316238fec5",
+          "file": "e2e/tableSorting.spec.ts",
           "line": 4,
           "column": 5
         }
@@ -152,8 +133,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-04-12T08:22:24.635Z",
-    "duration": 3515.192,
+    "startTime": "2026-05-10T12:22:31.592Z",
+    "duration": 41299.05100000001,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

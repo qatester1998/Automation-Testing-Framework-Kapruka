@@ -17,7 +17,7 @@ export class StationaryPage extends BasePage {
   }
 
   async isLoaded(): Promise<void> {
-    await this.page.waitForLoadState('networkidle');
+    await this.page.waitForLoadState('domcontentloaded');
 
     await expect
       .poll(async () => await this.productCards.count())
